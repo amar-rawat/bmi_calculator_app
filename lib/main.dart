@@ -8,6 +8,12 @@ void main() {
     providers: [
       ChangeNotifierProvider(
         create: (context) => UnitChangerProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => ResultProvider(),
+      ),
+      ChangeNotifierProvider(
+        create: (context) => BoxAnimatorProvider(),
       )
     ],
     child: const MyApp(),
@@ -23,6 +29,9 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
       title: 'BMI calculator',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          primarySwatch: Colors.deepPurple,
+          scaffoldBackgroundColor: Colors.deepPurple.shade50),
     );
   }
 }
